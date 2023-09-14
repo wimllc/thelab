@@ -25,13 +25,20 @@
     </style>
   </head>
   <body>
-    <iframe src="https://www.sta.gov.sa/zh/saudi-expert.html"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        width="100%"
-        height="100%"
-        scrolling="auto">
+    <iframe
+      id="theIframe"
+      src="about:blank"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      width="100%"
+      height="100%"
+      scrolling="auto">
     </iframe>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('url')) {document.getElementById('theIframe').src = urlParams.get('url');}
+    </script>
   </body>
 </html>
+/* https://dev.wim.ae/thelab/iframe.html?url=https://www.sta.gov.sa/zh/saudi-expert.html */
