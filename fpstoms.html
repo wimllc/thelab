@@ -2,12 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>FPS <--> MS</title>
+  <style media="all">
+    * {
+      font-family:Verdana,Geneva,sans-serif;
+      box-sizing:border-box;
+    }
+    body {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      margin:0;
+    }
+    .main-container {
+      justify-content:center;
+      line-height:1;
+      text-align:center;
+    }
+  </style>
   </head>
   <body>
-    <input type="number" id="in_fps" value="0" onchange="fpstoms(this.value)">FPS
-    <br>
-    <input type="number" id="in_ms" value="0" onchange="mstofps(this.value)">MS
+    <div class="main-container">
+      <h1>FPS <--> MS</h1>
+      <p>
+        <input type="number" id="in_fps" value="0" onchange="fpstoms(this.value);" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"> FPS
+      </p>
+      <p>
+        &#8593; EQUALS &#8595;
+      </p>
+      <p>
+        <input type="number" id="in_ms" value="0" onchange="mstofps(this.value);" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"> MS
+      </p>
+    </div>
     <script>
       function fpstoms(val) { document.querySelector("#in_ms").value = 1000.0/val; }
       function mstofps(val) { document.querySelector("#in_fps").value = 1000.0/val; }
