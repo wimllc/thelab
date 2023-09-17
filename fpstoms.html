@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FPS <--> MS</title>
+  </head>
+  <body>
+    <input type="number" id="in_fps" value="0" onchange="fpstoms(this.value)">FPS
+    <br>
+    <input type="number" id="in_ms" value="0" onchange="mstofps(this.value)">MS
+    <script>
+      function fpstoms(val) { document.querySelector("#in_ms").value = 1000.0/val; }
+      function mstofps(val) { document.querySelector("#in_fps").value = 1000.0/val; }
+    </script>
+  </body>
+</html>
